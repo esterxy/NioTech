@@ -16,7 +16,7 @@ export class MetaService {
    * @param relativeUrl URL relativa da página (ex: '/projetos')
    */
   public updateMeta(pageTitle: string, description: string, relativeUrl: string = ''): void {
-    const fullTitle = `${pageTitle} | Niō Tech — Desenvolvimento de Software & Automação`;
+    const fullTitle = `${pageTitle} | Nio Tech — Desenvolvimento de Software & Automação`;
     const siteUrl = `https://niotech.com.br${relativeUrl}`;
     const logoUrl = 'https://niotech.com.br/assets/logo/niotech-logo.png';
 
