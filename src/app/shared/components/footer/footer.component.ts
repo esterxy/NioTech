@@ -12,8 +12,8 @@ import { RouterModule, Router } from '@angular/router';
       <div class="container footer-grid">
         <!-- Coluna 1: Logo e Descrição -->
         <div class="footer-col brand-col">
-          <a routerLink="/" class="footer-logo" aria-label="Niō Tech Home">
-            <img src="/logo/niotech-logo-white.svg" alt="Niō Tech Logo Branco" class="logo-img" width="160" height="34" />
+          <a routerLink="/" class="footer-logo" aria-label="Nio Tech Home">
+            <img src="/logo/niotech - branco.png" alt="Nio Tech Logo" class="logo-img" />
           </a>
           <p class="brand-desc">
             Simplificamos a rotina de negócios, reduzindo custos e escalando resultados através de tecnologia de alto desempenho.
@@ -104,6 +104,13 @@ import { RouterModule, Router } from '@angular/router';
       .footer-logo {
         display: inline-block;
         margin-bottom: 1.5rem;
+
+        .logo-img {
+          max-height: 90px;
+          width: auto;
+          object-fit: contain;
+          display: block;
+        }
       }
 
       .brand-desc {

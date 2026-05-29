@@ -9,7 +9,7 @@ import { AnimateOnScrollDirective } from '../../../../shared/directives/animate-
   imports: [CommonModule, AnimateOnScrollDirective],
   template: `
     <section class="cta-section section-padding">
-      <!-- Circuit board line vectors in background -->
+      
       <div class="cta-vector-bg">
         <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M-50 150H150L220 220V350H450L500 400" stroke="white" stroke-width="2.5" stroke-linecap="round"/>

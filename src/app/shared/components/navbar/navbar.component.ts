@@ -12,8 +12,8 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
     <header class="navbar" [class.scrolled]="isScrolled">
       <div class="container navbar-container">
         <!-- Logo -->
-        <a routerLink="/" class="logo-link" aria-label="Niō Tech Home" (click)="closeMenu()">
-          <img [src]="isDarkMode() ? '/logo/niotech-logo-white.svg' : '/logo/niotech-logo.svg'" alt="Niō Tech Logo" class="logo-img" width="160" height="34" />
+        <a routerLink="/" class="logo-link" aria-label="Nio Tech Home" (click)="closeMenu()">
+          <img [src]="isDarkMode() ? '/logo/niotech - branco.png' : '/logo/niotech - Editado (1).png'" alt="Nio Tech Logo" class="logo-img" />
         </a>
 
         <!-- Navegação Desktop -->
@@ -87,7 +87,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
     <div class="mobile-drawer" [class.open]="isMenuOpen">
       <div class="drawer-header">
         <a routerLink="/" class="logo-link" (click)="closeMenu()">
-          <img [src]="isDarkMode() ? '/logo/niotech-logo-white.svg' : '/logo/niotech-logo.svg'" alt="Niō Tech Logo" class="logo-img" width="160" height="34" />
+          <img [src]="isDarkMode() ? '/logo/niotech - branco.png' : '/logo/niotech - Editado (1).png'" alt="Nio Tech Logo" class="logo-img" />
         </a>
       </div>
       <nav class="drawer-nav">
@@ -110,7 +110,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       position: sticky;
       top: 0;
       width: 100%;
-      height: 72px;
+      height: 90px;
       background-color: $color-bg-white;
       border-bottom: 1px solid $color-border;
       display: flex;
@@ -118,13 +118,13 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       z-index: 1000;
       @include transition-smooth;
 
-      &.scrolled {
-        height: 64px;
+       &.scrolled {
+        height: 72px;
         box-shadow: $shadow-primary;
         border-bottom-color: rgba($color-border, 0.5);
 
         .logo-img {
-          max-height: 40px;
+          max-height: 58px;
         }
       }
     }
@@ -141,7 +141,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       align-items: center;
       
       .logo-img {
-        max-height: 48px;
+        max-height: 74px;
         width: auto;
         object-fit: contain;
         display: block;
@@ -393,8 +393,7 @@ export class NavbarComponent implements OnInit {
   private initTheme(): void {
     if (this.isBrowser) {
       const savedTheme = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const dark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+      const dark = savedTheme !== 'light';
       this.isDarkMode.set(dark);
       this.applyTheme(dark);
     }

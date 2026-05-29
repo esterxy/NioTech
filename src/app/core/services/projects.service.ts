@@ -34,6 +34,31 @@ export class ProjectsService {
       }
     },
     {
+      id: 'sabor-brasa',
+      title: 'Sabor & Brasa — Sistema de Pedidos & Painel Administrativo',
+      client: 'Restaurante Sabor & Brasa',
+      location: 'Nacional',
+      category: 'software',
+      metric: '100%',
+      metricLabel: 'de automação e controle',
+      description: 'Sistema web completo de gerenciamento e realização de pedidos para restaurante, integrando checkout instantâneo via Pix QR Code e painel administrativo dark premium em tempo real.',
+      stack: ['.NET 10', 'EF Core', 'MySQL', 'JWT', 'QR Code', 'Bootstrap 5', 'Vanilla JS'],
+      featured: true,
+      liveUrl: 'https://sistemaprodutos-2.onrender.com/',
+      challenge: 'Garantir um fluxo ágil de pedidos para clientes, com atualização instantânea de estoque, ao mesmo tempo em que a gerência necessita de um painel de controle (dashboard) robusto, centralizado e seguro, para monitorar métricas financeiras de faturamento e gerir o catálogo de produtos e status dos pedidos.',
+      solution: 'Desenvolvemos uma aplicação moderna estruturada com backend robusto em .NET 10, Entity Framework Core e banco MySQL. Implementamos autenticação stateless via JWT com diferenciação de perfis (Admin e Cliente), geração dinâmica de QR Code para pagamento Pix, e um painel administrativo em tema escuro (Dark Theme) exclusivo. O painel inclui controle de estoque inteligente com cancelamento rastreável e gráficos reais em Chart.js para acompanhamento do faturamento diário.',
+      results: [
+        { value: 'Zero', label: 'Inconsistências no controle de estoque' },
+        { value: '100%', label: 'Pix QR Code gerado instantaneamente' },
+        { value: 'Real-time', label: 'Monitoramento de receita e pedidos' }
+      ],
+      testimonial: {
+        text: 'O Sabor & Brasa centralizou toda a nossa operação de pedidos e estoque de forma impecável. O painel de controle escuro é extremamente profissional e nos dá insights financeiros instantâneos.',
+        author: 'Sabor & Brasa Admin',
+        role: 'Gerência de Operações'
+      }
+    },
+    {
       id: 'gestao-pedidos',
       title: 'Sistema de Gestão de Pedidos',
       client: 'Distribuidora de Alimentos',
