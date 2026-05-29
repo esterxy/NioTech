@@ -1,0 +1,179 @@
+// styles.scss
+
+// Importar Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// Importar modulos globais
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+
+:root {
+  --color-primary:       #1A6FD4;  /* Azul elétrico */
+  --color-primary-hover: #1059A9;  /* Azul elétrico escurecido */
+  --color-dark:          #0D1F5C;  /* Azul-marinho */
+  --color-dark-hover:    #091540;  /* Azul-marinho escurecido */
+  --color-steel:         #7B8FA6;  /* Cinza aço */
+  --color-steel-muted:   #5C6E84;  /* Cinza aço escurecido */
+  --color-text:          #0F0F0F;  /* Quase preto */
+  --color-text-muted:    #374151;  /* Cinza escuro para corpo (lighten 15%) */
+  --color-text-more-muted:#6B7280; /* Cinza médio para detalhes (lighten 25%) */
+  --color-bg-light:      #F5F6F8;  /* Cinza gelo */
+  --color-bg-white:      #FFFFFF;  /* Branco */
+  --color-accent:        #00D4FF;  /* Ciano neon */
+  --color-border:        #E2E6EC;  /* Borda padrão */
+  --color-border-hover:  #CBD5E1;  /* Borda escura no hover */
+  --color-success:       #28C840;  /* Verde sucesso */
+  --color-card-shadow:   rgba(13, 31, 92, 0.04);
+  --color-scrollbar-thumb: #CBD5E1;
+  --color-scrollbar-track: #F5F6F8;
+  --color-ghost-hover-bg:  rgba(26, 111, 212, 0.05);
+  
+  /* Heading & Shadow mappings */
+  --color-heading:       #0D1F5C;
+  --shadow-primary:      0 4px 20px rgba(13, 31, 92, 0.08);
+  --shadow-large:        0 20px 40px rgba(13, 31, 92, 0.15);
+  --shadow-modal:        0 24px 64px rgba(13, 31, 92, 0.2);
+
+  /* Icon styling variables */
+  --color-icon-bg:       #FFFFFF;
+  --color-icon-border:   rgba(226, 230, 236, 0.6);
+  --color-icon-color:    #1A6FD4;
+}
+
+[data-theme="dark"] {
+  --color-primary:       #3B82F6;  /* Azul elétrico mais vibrante para contraste */
+  --color-primary-hover: #60A5FA;  /* Azul elétrico clareado para hover no escuro */
+  --color-dark:          #050814;  /* Fundo preto azulado profundo */
+  --color-dark-hover:    #0B0E1B;  /* Fundo secundário do rodapé */
+  --color-steel:         #94A3B8;  /* Cinza aço mais claro */
+  --color-steel-muted:   #CBD5E1;  /* Cinza aço mais claro clareado */
+  --color-text:          #F8FAFC;  /* Quase branco */
+  --color-text-muted:    #E2E8F0;  /* Cinza claro para corpo */
+  --color-text-more-muted:#94A3B8; /* Cinza médio */
+  --color-bg-light:      #0A0D1A;  /* Fundo cinza azulado escuro */
+  --color-bg-white:      #000000;  /* Preto puro */
+  --color-accent:        #00D4FF;
+  --color-border:        #1E293B;  /* Borda escura */
+  --color-border-hover:  #334155;  /* Borda escura no hover */
+  --color-success:       #10B981;
+  --color-card-shadow:   rgba(0, 0, 0, 0.3);
+  --color-scrollbar-thumb: #334155;
+  --color-scrollbar-track: #0A0D1A;
+  --color-ghost-hover-bg:  rgba(59, 130, 246, 0.1);
+
+  /* Heading & Shadow mappings */
+  --color-heading:       #F8FAFC;
+  --shadow-primary:      0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-large:        0 20px 40px rgba(0, 0, 0, 0.4);
+  --shadow-modal:        0 24px 64px rgba(0, 0, 0, 0.5);
+
+  /* Icon styling variables */
+  --color-icon-bg:       rgba(59, 130, 246, 0.1);
+  --color-icon-border:   rgba(59, 130, 246, 0.25);
+  --color-icon-color:    #00D4FF;
+}
+
+// Estilos de Base
+body {
+  font-family: $font-body;
+  background-color: $color-bg-light;
+  color: $color-text;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+// Tipografia
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: $color-heading;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  color: $color-heading;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: $color-heading;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: $color-heading;
+}
+
+
+p {
+  color: $color-text-muted;
+  font-weight: 400;
+  font-size: 1.05rem;
+}
+
+// Labels técnicas
+.tech-label {
+  font-family: $font-mono;
+  color: $color-primary;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+
+// Layout e Contenedores
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  @include tablet {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.section-padding {
+  padding-top: clamp(4rem, 8vw, 8rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+// Textura de Grid Técnico Global
+.tech-grid {
+  @include tech-grid-bg;
+}
+
+// Scrollbar Customizada
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+  border-radius: 4px;
+  
+  &:hover {
+    background: var(--color-primary);
+  }
+}
+
+// Acessibilidade: prefers-reduced-motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

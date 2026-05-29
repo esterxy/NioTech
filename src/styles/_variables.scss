@@ -1,0 +1,46 @@
+// _variables.scss
+
+// Paleta de Cores (mapeadas para variáveis CSS para suportar Light/Dark Mode)
+$color-primary:         var(--color-primary);
+$color-dark:            var(--color-dark);
+$color-steel:           var(--color-steel);
+$color-text:            var(--color-text);
+$color-bg-light:        var(--color-bg-light);
+$color-bg-white:        var(--color-bg-white);
+$color-accent:          var(--color-accent);
+$color-border:          var(--color-border);
+$color-success:         var(--color-success);
+$color-white:           #FFFFFF;  /* Sempre branco, independente do tema */
+
+
+// Variantes de Estado e Suavidade (evitam o uso de lighten/darken do SASS com CSS variables)
+$color-primary-hover:   var(--color-primary-hover);
+$color-dark-hover:      var(--color-dark-hover);
+$color-steel-muted:     var(--color-steel-muted);
+$color-text-muted:      var(--color-text-muted);
+$color-text-more-muted: var(--color-text-more-muted);
+$color-border-hover:    var(--color-border-hover);
+$color-card-shadow:     var(--color-card-shadow);
+$color-heading:         var(--color-heading);
+
+// Ícones Customizáveis (Light/Dark Mode-aware)
+$color-icon-bg:         var(--color-icon-bg);
+$color-icon-border:     var(--color-icon-border);
+$color-icon-color:      var(--color-icon-color);
+
+
+// Sombras do Sistema de Design (Light/Dark Mode-aware)
+$shadow-primary:        var(--shadow-primary);
+$shadow-large:          var(--shadow-large);
+$shadow-modal:          var(--shadow-modal);
+
+// Tipografia
+$font-display:  'Poppins', sans-serif;    // Títulos, headings, navbar
+$font-body:     'Poppins', sans-serif;    // Corpo de texto, parágrafos
+$font-mono:     'JetBrains Mono', monospace;  // Tags técnicas, código, labels
+
+// Breakpoints
+$bp-mobile:  480px;
+$bp-tablet:  768px;
+$bp-desktop: 1024px;
+$bp-wide:    1280px;

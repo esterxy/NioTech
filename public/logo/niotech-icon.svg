@@ -1,0 +1,57 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente de cor extraído do manual: azul elétrico -> azul marinho -> cinza metálico -->
+    <linearGradient id="pcbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A6FD4" />
+      <stop offset="60%" stop-color="#0D1F5C" />
+      <stop offset="100%" stop-color="#7B8FA6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Pinos laterais esquerdos -->
+  <path d="M12 35H25" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 45H25" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 55H25" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 65H25" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Pinos laterais direitos -->
+  <path d="M75 35H88" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M75 45H88" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M75 55H88" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M75 65H88" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Trilhas verticais superiores -->
+  <path d="M40 12V25" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 12V25" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 12V25" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Trilhas verticais inferiores -->
+  <path d="M40 75V88" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 75V88" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M60 75V88" stroke="url(#pcbGrad)" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Moldura do Circuito Externo -->
+  <path d="M28 28H72V72H28Z" stroke="url(#pcbGrad)" stroke-width="4.5" stroke-linejoin="round"/>
+
+  <!-- O "N" Central em Trilhas Eletrônicas -->
+  <path d="M36 64V36" stroke="url(#pcbGrad)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M36 36L64 64" stroke="url(#pcbGrad)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M64 64V36" stroke="url(#pcbGrad)" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Nós de Solda (Círculos e Ilhas) -->
+  <circle cx="36" cy="36" r="3.5" fill="#00D4FF" stroke="url(#pcbGrad)" stroke-width="1.5"/>
+  <circle cx="36" cy="64" r="3.5" fill="#00D4FF" stroke="url(#pcbGrad)" stroke-width="1.5"/>
+  <circle cx="64" cy="36" r="3.5" fill="#00D4FF" stroke="url(#pcbGrad)" stroke-width="1.5"/>
+  <circle cx="64" cy="64" r="3.5" fill="#00D4FF" stroke="url(#pcbGrad)" stroke-width="1.5"/>
+
+  <!-- Trilhas diagonais de conexões extras de micro-detalhe -->
+  <path d="M30 30L22 22" stroke="url(#pcbGrad)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M70 30L78 22" stroke="url(#pcbGrad)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M30 70L22 78" stroke="url(#pcbGrad)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M70 70L78 78" stroke="url(#pcbGrad)" stroke-width="2" stroke-linecap="round"/>
+  
+  <circle cx="22" cy="22" r="2" fill="#7B8FA6"/>
+  <circle cx="78" cy="22" r="2" fill="#7B8FA6"/>
+  <circle cx="22" cy="78" r="2" fill="#7B8FA6"/>
+  <circle cx="78" cy="78" r="2" fill="#7B8FA6"/>
+</svg>

@@ -1,0 +1,48 @@
+// _mixins.scss
+@import 'variables';
+
+// Media Queries
+@mixin mobile {
+  @media (max-width: #{$bp-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: #{$bp-wide}) {
+    @content;
+  }
+}
+
+// Visual Utilities
+@mixin transition-smooth {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Background Grid Técnico
+@mixin tech-grid-bg {
+  background-color: $color-bg-light;
+  background-image: 
+    linear-gradient(rgba($color-steel, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($color-steel, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center;
+}
