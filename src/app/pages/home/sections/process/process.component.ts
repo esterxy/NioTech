@@ -35,8 +35,10 @@ interface ProcessStep {
               <div class="step-marker">
                 <span class="step-num">{{ step.num }}</span>
               </div>
-              <h3 class="step-title">{{ step.title }}</h3>
-              <p class="step-desc">{{ step.description }}</p>
+              <div class="step-content">
+                <h3 class="step-title">{{ step.title }}</h3>
+                <p class="step-desc">{{ step.description }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -155,6 +157,16 @@ interface ProcessStep {
         align-items: center;
         text-align: center;
         gap: 1.25rem;
+      }
+    }
+
+    .step-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      @include tablet {
+        align-items: center;
       }
     }
 

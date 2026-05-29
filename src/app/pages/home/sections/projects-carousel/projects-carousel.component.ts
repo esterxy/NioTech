@@ -188,12 +188,14 @@ import { BtnGhostComponent } from '../../../../shared/components/btn-ghost/btn-g
     }
 
     .carousel-item {
-      width: 290px;
+      width: 85vw;
+      max-width: 290px;
       scroll-snap-align: start;
       flex-shrink: 0;
 
       @include tablet {
         width: 380px;
+        max-width: none;
       }
 
       @include desktop {

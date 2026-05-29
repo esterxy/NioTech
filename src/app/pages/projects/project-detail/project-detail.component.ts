@@ -109,23 +109,38 @@ import { Project } from '../../../core/models/project.model';
       backdrop-filter: blur(12px);
       z-index: 1100;
       @include flex-center;
-      padding: 1.5rem;
+      padding: 0;
       animation: fadeIn 0.25s ease-out;
+
+      @include tablet {
+        padding: 1.5rem;
+      }
     }
 
     .modal-content {
       position: relative;
       width: 100%;
-      max-width: 900px;
-      max-height: 90vh;
+      height: 100%;
+      max-width: none;
+      max-height: 100%;
       background-color: $color-bg-white;
-      border: 1px solid $color-border;
-      border-radius: 16px;
-      box-shadow: $shadow-modal;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
       display: flex;
       flex-direction: column;
       overflow: hidden;
       animation: slideUpScale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+      @include tablet {
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        max-height: 90vh;
+        border: 1px solid $color-border;
+        border-radius: 16px;
+        box-shadow: $shadow-modal;
+      }
     }
 
     .btn-close {
@@ -317,6 +332,10 @@ import { Project } from '../../../core/models/project.model';
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
+
+      @media (min-width: 480px) and (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .result-card {

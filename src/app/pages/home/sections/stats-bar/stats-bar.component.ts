@@ -39,9 +39,14 @@ interface MetricItem {
 
     .stats-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
       text-align: center;
+
+      @media (min-width: 400px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
 
       @include tablet {
         grid-template-columns: repeat(4, 1fr);

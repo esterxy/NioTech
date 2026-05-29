@@ -24,10 +24,10 @@ import { Component } from '@angular/core';
 
     .whatsapp-fab {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 56px;
-      height: 56px;
+      bottom: 16px;
+      right: 16px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background-color: #25D366;
       color: $color-white;
@@ -37,8 +37,20 @@ import { Component } from '@angular/core';
       @include transition-smooth;
 
       svg {
-        width: 28px;
-        height: 28px;
+        width: 24px;
+        height: 24px;
+      }
+
+      @include tablet {
+        bottom: 24px;
+        right: 24px;
+        width: 56px;
+        height: 56px;
+
+        svg {
+          width: 28px;
+          height: 28px;
+        }
       }
 
       &:hover {

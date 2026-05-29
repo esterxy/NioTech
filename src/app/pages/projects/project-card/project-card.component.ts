@@ -85,13 +85,15 @@ import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-
         }
       }
 
-      &:hover {
-        border-color: $color-primary;
-        transform: translateY(-4px);
-        box-shadow: $shadow-primary;
+      @media (hover: hover) {
+        &:hover {
+          border-color: $color-primary;
+          transform: translateY(-4px);
+          box-shadow: $shadow-primary;
 
-        .card-overlay {
-          opacity: 1;
+          .card-overlay {
+            opacity: 1;
+          }
         }
       }
     }
@@ -226,18 +228,22 @@ import { AnimateOnScrollDirective } from '../../../shared/directives/animate-on-
 
     /* Hover Overlay */
     .card-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(13, 31, 92, 0.95);
-      backdrop-filter: blur(4px);
-      z-index: 10;
-      opacity: 0;
-      @include flex-center;
-      @include transition-smooth;
-      pointer-events: auto;
+      display: none;
+
+      @media (hover: hover) {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(13, 31, 92, 0.95);
+        backdrop-filter: blur(4px);
+        z-index: 10;
+        opacity: 0;
+        @include flex-center;
+        @include transition-smooth;
+      }
     }
 
     .btn-overlay {

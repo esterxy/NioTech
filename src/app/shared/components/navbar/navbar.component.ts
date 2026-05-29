@@ -154,7 +154,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       align-items: center;
       gap: 2rem;
 
-      @include tablet {
+      @include desktop {
         display: flex;
       }
     }
@@ -200,7 +200,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       align-items: center;
       gap: 1.25rem;
 
-      @include tablet {
+      @include desktop {
         display: flex;
       }
     }
@@ -214,7 +214,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       align-items: center;
       gap: 0.5rem;
 
-      @include tablet {
+      @include desktop {
         display: none;
       }
     }
@@ -255,7 +255,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       height: 40px;
       z-index: 1001;
 
-      @include tablet {
+      @include desktop {
         display: none;
       }
     }
