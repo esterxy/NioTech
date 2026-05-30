@@ -221,14 +221,8 @@ import { RouterModule, Router } from '@angular/router';
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.5rem;
       text-align: center;
-
-      @include tablet {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-      }
     }
 
     .copyright {

@@ -119,13 +119,8 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
       @include transition-smooth;
 
        &.scrolled {
-        height: 72px;
         box-shadow: $shadow-primary;
         border-bottom-color: rgba($color-border, 0.5);
-
-        .logo-img {
-          max-height: 58px;
-        }
       }
 
       &.hidden {
@@ -381,6 +376,7 @@ export class NavbarComponent implements OnInit {
   public isDarkMode = signal<boolean>(false);
   private readonly isBrowser: boolean;
   private lastScrollY = 0;
+  private readonly scrollThreshold = 15;
 
   constructor(
     private readonly router: Router,
@@ -452,19 +448,25 @@ export class NavbarComponent implements OnInit {
       return;
     }
 
-    // Esconde ao rolar para baixo (após 100px), mostra ao rolar para cima
-    if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
-      this.isHidden = true;
-    } else if (currentScrollY < this.lastScrollY) {
-      this.isHidden = false;
+    const diff = currentScrollY - this.lastScrollY;
+
+    // Apenas atualiza a visibilidade se o scroll acumulado passar do threshold
+    if (Math.abs(diff) > this.scrollThreshold) {
+      if (diff > 0 && currentScrollY > 100) {
+        // Rolando para baixo -> Esconde
+        this.isHidden = true;
+      } else if (diff < 0) {
+        // Rolando para cima -> Mostra
+        this.isHidden = false;
+      }
+      this.lastScrollY = currentScrollY;
     }
 
     // Garante que mostre no topo absoluto
     if (currentScrollY <= 15) {
       this.isHidden = false;
+      this.lastScrollY = currentScrollY;
     }
-
-    this.lastScrollY = currentScrollY;
   }
 
   public toggleMenu(): void {
