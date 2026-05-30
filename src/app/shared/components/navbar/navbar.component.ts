@@ -9,7 +9,7 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
   standalone: true,
   imports: [CommonModule, RouterModule, BtnPrimaryComponent],
   template: `
-    <header class="navbar" [class.scrolled]="isScrolled">
+    <header class="navbar" [class.scrolled]="isScrolled" [class.hidden]="isHidden">
       <div class="container navbar-container">
         <!-- Logo -->
         <a routerLink="/" class="logo-link" aria-label="Nio Tech Home" (click)="closeMenu()">
@@ -126,6 +126,10 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
         .logo-img {
           max-height: 58px;
         }
+      }
+
+      &.hidden {
+        transform: translateY(-100%);
       }
     }
 
@@ -373,8 +377,10 @@ import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
 export class NavbarComponent implements OnInit {
   public isMenuOpen = false;
   public isScrolled = false;
+  public isHidden = false;
   public isDarkMode = signal<boolean>(false);
   private readonly isBrowser: boolean;
+  private lastScrollY = 0;
 
   constructor(
     private readonly router: Router,
@@ -435,7 +441,30 @@ export class NavbarComponent implements OnInit {
   }
 
   private checkScroll(): void {
-    this.isScrolled = window.scrollY > 15;
+    const currentScrollY = window.scrollY;
+    
+    // Determina se passou do topo
+    this.isScrolled = currentScrollY > 15;
+
+    // Se o menu mobile estiver aberto, não esconde a navbar
+    if (this.isMenuOpen) {
+      this.lastScrollY = currentScrollY;
+      return;
+    }
+
+    // Esconde ao rolar para baixo (após 100px), mostra ao rolar para cima
+    if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
+      this.isHidden = true;
+    } else if (currentScrollY < this.lastScrollY) {
+      this.isHidden = false;
+    }
+
+    // Garante que mostre no topo absoluto
+    if (currentScrollY <= 15) {
+      this.isHidden = false;
+    }
+
+    this.lastScrollY = currentScrollY;
   }
 
   public toggleMenu(): void {
